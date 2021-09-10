@@ -13,13 +13,28 @@
   ">
   <ol>
     <li><a onclick="
-    document.querySelector('article').innerHTML ='<h2>HTML</h2>HTML is...';
+    	fetch('html').then(function(response){//서버에게 fetch() 안의 파일을 요청하고응답이 끄난다면
+			response.text().then(function(text){
+				//alert(text);
+				document.querySelector('article').innerHTML = text;//이부분이 실행됨
+			})
+		})
     ">HTML</a></li>
     <li><a onclick="
-    document.querySelector('article').innerHTML ='<h2>HTML</h2>CSS is...';"
+    	fetch('CSS').then(function(response){//서버에게 fetch() 안의 파일을 요청하고응답이 끄난다면
+			response.text().then(function(text){
+				//alert(text);
+				document.querySelector('article').innerHTML = text;//이부분이 실행됨
+			})
+		})"
     >CSS</a></li>
     <li><a onclick="
-    document.querySelector('article').innerHTML ='<h2>HTML</h2><Javascript is...';"
+    	fetch('JavaScript').then(function(response){//서버에게 fetch() 안의 파일을 요청하고응답이 끄난다면
+			response.text().then(function(text){
+				//alert(text);
+				document.querySelector('article').innerHTML = text;//이부분이 실행됨
+			})
+		})"
     >JavaScript</a></li>
   </ol>
  	<article>
