@@ -33,8 +33,17 @@
 	}
 	fetch('list').then(function(response){//서버에게 fetch() 안의 파일을 요청하고응답이 끄난다면
 		response.text().then(function(text){
-			//alert(text);
-			document.querySelector('#nav').innerHTML = text;//이부분이 실행됨
+			  var items = text.split(',');//.를 기준으로 나누어 배열에 저장하는 split
+		      var i = 0;
+		      var tags = '';
+		      while(i<items.length){//사용자가 list파일에 편하게 추가하면 형식에 맞춰 알아서 출력해줄수 있다
+		        var item = items[i];
+		        item = item.trim();
+		        var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>';
+		        tags = tags + tag;
+		        i = i + 1;
+		      }
+		      document.querySelector('#nav').innerHTML = tags;
 		})
 	})
  	</script>
