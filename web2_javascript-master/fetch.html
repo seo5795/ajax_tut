@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<article>
+	
+	</article>
+	<input type="button" value="fetch" onclick="
+		fetch('html').then(function(response){//서버에게 fetch() 안의 파일을 요청하고응답이 끄난다면
+			response.text().then(function(text){
+				//alert(text);
+				document.querySelector('article').innerHTML = text;//이부분이 실행됨
+			})
+		})">
+</body>
+</html>
