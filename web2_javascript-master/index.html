@@ -33,6 +33,7 @@
 	}
 	fetch('list').then(function(response){//서버에게 fetch() 안의 파일을 요청하고응답이 끄난다면
 		response.text().then(function(text){
+			
 			  var items = text.split(',');//.를 기준으로 나누어 배열에 저장하는 split
 		      var i = 0;
 		      var tags = '';
@@ -49,4 +50,3 @@
  	</script>
  	</body>
 </html>
-
