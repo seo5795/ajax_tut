@@ -12,9 +12,9 @@
     nightDayHandler(this);
   ">
   <ol>
-    <li><a onclick="fetchPage('html')">HTML</a></li>
-    <li><a onclick="fetchPage('css')">CSS</a></li>
-    <li><a onclick="fetchPage('JavaScript')">JavaScript</a></li>
+    <li><a href="#!html" onclick="fetchPage('html')">HTML</a></li>
+    <li><a href="#!css" onclick="fetchPage('css')">CSS</a></li>
+    <li><a href="#!javascript" onclick="fetchPage('JavaScript')">JavaScript</a></li>
   </ol>
  	<article>
  
@@ -28,6 +28,11 @@
 			})
 		})
 		}
+	if(location.hash){
+		fetchPage(location.hash.substr(2));//2째 다음 
+	}else{
+		fetchPage('welcome');
+	}
  	</script>
 </body>
 </html>
